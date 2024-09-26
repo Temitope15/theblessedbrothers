@@ -19,7 +19,7 @@ function Team() {
                         <motion.img
                            src={member.memberpics}
                            alt={member.memberName}
-                           className="w-38 h-32 object-cover rounded-full mb-4 border-4 border-indigo-600"
+                           className="w-32 h-32 object-cover rounded-full mb-4 border-4 border-indigo-600"
                            whileHover={{ scale: 1.1 }}
                            transition={{ duration: 0.3 }}
                         />

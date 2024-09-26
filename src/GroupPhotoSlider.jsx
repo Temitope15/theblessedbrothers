@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
-import { sliderData } from "./data/SliderData"; 
+import { sliderData } from "./data/SliderData";
 
 function GroupPhotoSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -30,22 +30,23 @@ function GroupPhotoSlider() {
   }, [currentIndex]);
 
   return (
-    <div className="relative group w-full h-auto cursor-pointer">
-      <img
-        src={sliderData[currentIndex].imageUrl}
-        alt={`Slide ${currentIndex + 1}`}
-        className="w-full max-h-[600px] rounded-lg shadow-lg  md:h-1/2" 
-        onMouseEnter={() => setShowDetails(true)}
-        onMouseLeave={() => setShowDetails(false)}
-      />
-      
-
-      {/* Image Details (only visible when hovered on desktop, or after 1 sec on mobile) */}
-      {showDetails && (
-        <div className="absolute bottom-5 left-0 bg-black bg-opacity-60 text-white w-full p-4 text-center transition-opacity duration-500 md:bottom-4  md:rounded-lg md:left-1/2 md:transform md:-translate-x-1/2">
-          <p>{sliderData[currentIndex].details}</p>
-        </div>
-      )}
+    <div className="relative group w-full my-auto cursor-pointer">
+      <div className="relative w-full max-h-[600px] md:h-1/2 overflow-hidden rounded-lg shadow-lg">
+        <img
+          src={sliderData[currentIndex].imageUrl}
+          alt={`Slide ${currentIndex + 1}`}
+          className="w-full h-full object-cover object-center transition-all duration-500 ease-in-out"
+          onMouseEnter={() => setShowDetails(true)}
+          onMouseLeave={() => setShowDetails(false)}
+        />
+        
+        {/* Image Details (only visible when hovered on desktop, or after 1 sec on mobile) */}
+        {showDetails && (
+          <div className="absolute bottom-5 left-0 bg-black bg-opacity-60 text-white w-full p-4 text-center transition-opacity duration-500 md:bottom-4 md:rounded-lg md:left-1/2 md:transform md:-translate-x-1/2">
+            <p>{sliderData[currentIndex].details}</p>
+          </div>
+        )}
+      </div>
 
       {/* Slide Controls - Next and Previous */}
       <div
@@ -63,6 +64,7 @@ function GroupPhotoSlider() {
         &#8250;
       </div>
 
+      {/* Dots Indicator */}
       <div className="flex justify-center space-x-2 mt-4">
         {sliderData.map((_, index) => (
           <div

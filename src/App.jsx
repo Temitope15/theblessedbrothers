@@ -6,6 +6,9 @@ import Services from "./Services";
 import Team from "./Team";
 import { slides } from "./data/slidesData";
 import Members from "./Members";
+import Footer from "./Footer";
+import ContactForm from "./ContactForm";
+// import JoinUsForm from "./JoinUsForm";
 
 
 
@@ -26,6 +29,9 @@ function App() {
       <Services/>
       <Team/>
       <Members/>
+      <ContactForm/>
+      {/* <JoinUsForm/> */}
+      <Footer/>
     </div>
   )
 }
