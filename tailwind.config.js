@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#3490dc',
+        primary: '#1f2937',
         secondary: '#ffed4a',
         accent: '#38b2ac',
       },
@@ -19,4 +19,3 @@ export default {
   },
   plugins: [],
 }
-

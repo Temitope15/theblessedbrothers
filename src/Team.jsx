@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 
 function Team() {
    return (
-      <section className="py-12 bg-gray-100">
+      <section className="py-12 bg-primary">
          <div className="container mx-auto px-4 max-w-screen-xl text-center">
-            <h2 className="text-4xl font-bold mb-8 text-gray-800">Meet Our Team</h2>
+            <h2 className="text-4xl font-bold mb-8 text-white">Meet Our Team</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                {MEMBERS.filter(member => member.position).map((member, index) => (
                   <motion.div
@@ -19,12 +19,12 @@ function Team() {
                         <motion.img
                            src={member.memberpics}
                            alt={member.memberName}
-                           className="w-32 h-32 object-cover rounded-full mb-4 border-4 border-indigo-600"
+                           className="w-32 h-32 object-cover rounded-full mb-4 border-4 border-accent"
                            whileHover={{ scale: 1.1 }}
                            transition={{ duration: 0.3 }}
                         />
                         <h3 className="text-xl font-semibold text-gray-900">{member.memberName}</h3>
-                        <p className="text-indigo-600 font-medium">{member.position}</p>
+                        <p className="text-accent font-medium">{member.position}</p>
                      </div>
                      <motion.div
                         className="opacity-0 group-hover:opacity-100 mt-4 text-center"
@@ -35,7 +35,7 @@ function Team() {
                         <p className="text-gray-700 mb-2">{member.about}</p>
                         <a
                            href={`mailto:${member.email}`}
-                           className="text-indigo-600 hover:underline text-sm"
+                           className="text-accent hover:underline text-sm"
                         >
                            {member.email}
                         </a>

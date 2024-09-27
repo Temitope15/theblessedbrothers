@@ -1,8 +1,8 @@
 // import HeroSection from "./HeroSection";
 import HeroSlideshow from "./HeroSlideShow";
-import Navbar from "./Navbar";
+import Navbar from "./navbar";
 import AboutUs from "./AboutUs";
-import Services from "./Services";
+import Services from "./services";
 import Team from "./Team";
 import { slides } from "./data/slidesData";
 import Members from "./Members";

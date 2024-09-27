@@ -16,7 +16,7 @@ const ContactFormSchema = Yup.object().shape({
 
 const ContactForm = () => {
   return (
-    <div className="max-w-md mx-auto md:mx-0 md:max-w-full p-6 bg-gray-800 rounded-lg md:rounded shadow-md text-center">
+    <div id="contact"className="max-w-md mx-auto md:mx-0 md:max-w-full  p-6 bg-gray-800 shadow-md text-center">
       <h2 className="text-2xl font-bold text-white mb-4">Contact Us</h2>
       <p className="text-white mb-4">Any questions? Send us an email!</p>
       
@@ -35,7 +35,7 @@ const ContactForm = () => {
         }}
       >
         {({ isSubmitting }) => (
-          <Form>
+          <Form className='md:w-3/4 mx-auto'>
             {/* Name Field */}
             <div className="mb-4">
               <label htmlFor="name" className="block text-sm font-medium text-white">
@@ -97,7 +97,7 @@ const ContactForm = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300"
+              className="bg-accent hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300"
               disabled={isSubmitting}
             >
               {isSubmitting ? 'Sending...' : 'Send Email'}
