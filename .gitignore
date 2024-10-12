@@ -8,6 +8,8 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+/src/archive/
+p.sh
 dist-ssr
 *.local
 .env

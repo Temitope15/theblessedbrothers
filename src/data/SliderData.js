@@ -1,3 +1,7 @@
+/**
+ * The data used to update groupSlider.jsx the gallery section
+ */
+
 export const sliderData = [
   {
     imageUrl:

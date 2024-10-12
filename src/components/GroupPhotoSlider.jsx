@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { sliderData } from "./data/SliderData";
+import { sliderData } from "../data/SliderData";
 
 function GroupPhotoSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);

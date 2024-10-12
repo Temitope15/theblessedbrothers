@@ -5,12 +5,11 @@ function HeroSlideshow({ slides }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    
     const slideInterval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 5000); 
+    }, 5000);
 
-    return () => clearInterval(slideInterval); 
+    return () => clearInterval(slideInterval);
   }, [slides.length]);
 
   return (

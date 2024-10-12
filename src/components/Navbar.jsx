@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { links } from "./data/NavLinks";
+import { links } from "../data/NavLinks";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
