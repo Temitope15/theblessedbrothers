@@ -1,0 +1,20 @@
+
+---
+deployment:
+  tasks:
+    - export DEPLOY_PATH=/home/thebles1/public_html
+    - echo "Starting deployment of React + Vite project"
+    - cd $DEPLOY_PATH
+    - echo "Cleaning up old files"
+    - rm -rf *
+    - echo "Pulling latest changes from GitHub"
+    - git pull origin main
+    - echo "Installing dependencies"
+    - npm install
+    - echo "Building the project"
+    - npm run build
+    - echo "Deploying build files"
+    - cp -R dist/* $DEPLOY_PATH
+    - echo "Deployment completed successfully"
+
+
