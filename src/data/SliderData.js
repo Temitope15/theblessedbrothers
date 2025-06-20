@@ -3,6 +3,20 @@
  */
 
 export const sliderData = [
+
+  
+  {
+    imageUrl: "https://i.ibb.co/hFBknRVN/bb-new-1.jpg",
+    details: "During our 2025 general meeting",
+  },
+  {
+    imageUrl: "https://i.ibb.co/spR31LKs/bb-new-2.jpg",
+    details: "During our 2025 general meeting",
+  },
+  {
+    imageUrl: "https://i.ibb.co/spR31LKs/bb-new-4.jpg",
+    details: "During our 2025 general meeting",
+  },
   {
     imageUrl:
       "https://i.ibb.co/ns970xR/Whats-App-Image-2024-09-16-at-22-11-29-5c05c1b3.jpg",
@@ -22,17 +36,5 @@ export const sliderData = [
     details: "Leadership workshop at the community center",
   },
 
-  {
-    imageUrl: "https://i.ibb.co/hFBknRVN/bb-new-1.jpg",
-    details: "During our 2025 general meeting",
-  },
-  {
-    imageUrl: "https://i.ibb.co/spR31LKs/bb-new-2.jpg",
-    details: "During our 2025 general meeting",
-  },
-  {
-    imageUrl: "https://i.ibb.co/spR31LKs/bb-new-4.jpg",
-    details: "During our 2025 general meeting",
-  },
   ];
   
