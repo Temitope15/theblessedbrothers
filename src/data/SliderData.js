@@ -23,7 +23,16 @@ export const sliderData = [
   },
 
   {
-    imageUrl: "https://i.ibb.co/LQK2v9K/gallery-3.jpg",
-    details: "During our annual team-building event",
+    imageUrl: "https://i.ibb.co/hFBknRVN/bb-new-1.jpg",
+    details: "During our 2025 general meeting",
   },
-];
+  {
+    imageUrl: "https://i.ibb.co/spR31LKs/bb-new-2.jpg",
+    details: "During our 2025 general meeting",
+  },
+  {
+    imageUrl: "https://i.ibb.co/spR31LKs/bb-new-4.jpg",
+    details: "During our 2025 general meeting",
+  },
+  ];
+  
