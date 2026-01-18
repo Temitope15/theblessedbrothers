@@ -28,8 +28,8 @@ function HeroSlideshow({ slides }) {
         >
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
-            <h1 className="text-4xl md:text-6xl font-bold">{slide.title}</h1>
-            <p className="mt-4 text-lg md:text-xl">{slide.subtitle}</p>
+            <h1 className="text-4xl md:text-6xl font-bold text-white">{slide.title}</h1>
+            <p className="mt-4 text-lg md:text-xl text-white">{slide.subtitle}</p>
             {slide.buttonLabel && slide.buttonLink && (
               <a
                 href={slide.buttonLink}

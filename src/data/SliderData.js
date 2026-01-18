@@ -4,35 +4,35 @@
 
 export const sliderData = [
   {
-    imageUrl: "https://ibb.co/nsfvW6G4",
+    imageUrl: "https://ibb.co/MY9FK61",
     details: "2025 End of the year general meeting",
   },
   {
-    imageUrl: "https://ibb.co/5hWZB6c3",
+    imageUrl: "https://ibb.co/39SBp5t0",
     details: "2025 End of the year general meeting",
   },
   {
-    imageUrl: "https://ibb.co/wh30hMwx",
+    imageUrl: "https://ibb.co/9HsB7N4z",
     details: "2025 End of the year general meeting",
   },
   {
-    imageUrl: "https://ibb.co/bMgGTw14",
+    imageUrl: "https://ibb.co/Pv9BQ0jY",
     details: "2025 End of the year general meeting",
   },
   {
-    imageUrl: "https://ibb.co/4nzW6Pbt",
+    imageUrl: "https://ibb.co/39SBp5t0",
     details: "2025 End of the year general meeting",
   },
   {
-    imageUrl: "https://ibb.co/G4zWcFK3",
+    imageUrl: "https://ibb.co/Pv9BQ0jY",
     details: "2025 End of the year general meeting",
   },
   {
-    imageUrl: "https://ibb.co/wrNwbMkk",
+    imageUrl: "https://ibb.co/Pv9BQ0jY",
     details: "2025 End of the year general meeting",
   },
   {
-    imageUrl: "https://ibb.co/rfpdZh7j",
+    imageUrl: "https://ibb.co/Pv9BQ0jY",
     details: "2025 End of the year general meeting",
   },
   {
