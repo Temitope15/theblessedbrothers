@@ -7,13 +7,24 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#1f2937',
-        secondary: '#ffed4a',
-        accent: '#38b2ac',
+        // Deep Navy for strong contrast and professional look
+        primary: {
+          DEFAULT: '#0F172A', 
+          light: '#1E293B',
+        },
+        // Gold/Bronze for the premium accent
+        accent: {
+          DEFAULT: '#D4AF37', 
+          hover: '#B5952F',
+        },
+        // Off-white for background (easier on eyes than pure white)
+        surface: '#F8FAFC',
       },
       fontFamily: {
-        sans: ['Graphik', 'sans-serif'],
-        serif: ['Merriweather', 'serif'],
+        // Serif for Headings (Classy)
+        serif: ['"Playfair Display"', 'serif'],
+        // Clean Sans for Body (Readable)
+        sans: ['"Inter"', 'sans-serif'],
       },
     },
   },

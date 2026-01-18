@@ -1,4 +1,5 @@
-// import HeroSection from "./Archive/HeroSection";
+// src/App.jsx
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HeroSlideshow from "./HeroSlideShow";
 import Navbar from "./components/Navbar";
 import AboutUs from "./AboutUs";
@@ -8,31 +9,35 @@ import { slides } from "./data/slidesData";
 import Members from "./Members";
 import Footer from "./components/Footer";
 import ContactForm from "./ContactForm";
-// import JoinUsForm from "./Archive/JoinUsForm"; - this is a later feature, to enable people to join the blessedbrothers
+import GroupPhotoSlider from "./components/GroupPhotoSlider"; // Use the new one
+import Admin from "./Admin"; // Import the admin page
+
+// Create a Layout component for the public pages
+const PublicLayout = () => (
+  <div className="bg-surface">
+    <Navbar />
+    <HeroSlideshow slides={slides} />
+    <AboutUs />
+    <Services />
+    <Team />
+    <Members />
+    <GroupPhotoSlider />
+    <ContactForm />
+    <Footer />
+  </div>
+);
 
 function App() {
   return (
-    <div className="bg-gray-100">
-      <Navbar />
-      {/* A previous version of the hero */}
-      {/* <HeroSection
-        title="Welcome to The Blessed Brothers"
-        subtitle="Empowering a generation to make an impact."
-        imageUrl=""
-        buttonLabel="Join Us"
-        buttonLink="#contact"
-      /> */}
-
-      {/* current version of the hero */}
-      <HeroSlideshow slides={slides} />
-      <AboutUs />
-      <Services />
-      <Team />
-      <Members />
-      <ContactForm />
-      {/* <JoinUsForm/> */}
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        {/* The Main Website */}
+        <Route path="/" element={<PublicLayout />} />
+        
+        {/* The Secret Route - Give this URL to yourself only */}
+        <Route path="/admin-secret-upload" element={<Admin />} />
+      </Routes>
+    </Router>
   );
 }
 

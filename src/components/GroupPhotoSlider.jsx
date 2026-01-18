@@ -1,74 +1,96 @@
 import { useState, useEffect } from "react";
-import { sliderData } from "../data/SliderData";
+import { db } from "../firebase";
+import { collection, query, orderBy, getDocs } from "firebase/firestore";
+// Fallback data if database is empty
+import { sliderData as initialData } from "../data/SliderData"; 
 
 function GroupPhotoSlider() {
+  const [slides, setSlides] = useState(initialData);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [showDetails, setShowDetails] = useState(false);
 
-  const totalSlides = sliderData.length;
-
-  const goToNextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
-    setShowDetails(false);
-  };
-
+  // Fetch from Firebase on load
   useEffect(() => {
-    const timer = setInterval(goToNextSlide, 5000);
-    return () => clearInterval(timer);
+    const fetchGallery = async () => {
+      try {
+        const q = query(collection(db, "gallery"), orderBy("createdAt", "desc"));
+        const querySnapshot = await getDocs(q);
+        const dbSlides = querySnapshot.docs.map(doc => doc.data());
+        if (dbSlides.length > 0) {
+          setSlides(dbSlides);
+        }
+      } catch (error) {
+        console.log("Using default local data");
+      }
+    };
+    fetchGallery();
   }, []);
 
-  useEffect(() => {
-    if (window.innerWidth <= 768) {
-      const detailsTimer = setTimeout(() => {
-        setShowDetails(true);
-      }, 1000);
-      return () => clearTimeout(detailsTimer);
-    }
-  }, [currentIndex]);
+  const prevSlide = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const nextSlide = () => {
+    const isLastSlide = currentIndex === slides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
 
   return (
-    <div id="gallery" className="relative group w-full my-auto cursor-pointer">
-      <div className="relative w-full max-h-[600px] md:h-1/2 overflow-hidden rounded-lg shadow-lg">
-        <img
-          src={sliderData[currentIndex].imageUrl}
-          alt={`Slide ${currentIndex + 1}`}
-          className="w-full h-full object-cover object-center transition-all duration-500 ease-in-out"
-          onMouseEnter={() => setShowDetails(true)}
-          onMouseLeave={() => setShowDetails(false)}
-        />
-        {showDetails && (
-          <div className="absolute bottom-5 left-0 bg-black bg-opacity-60 text-white w-full p-4 text-center transition-opacity duration-500 md:bottom-4 md:rounded-lg md:left-1/2 md:transform md:-translate-x-1/2">
-            <p>{sliderData[currentIndex].details}</p>
-          </div>
-        )}
-      </div>
+    <div className="w-full max-w-5xl mx-auto py-16 px-4">
+        {/* Header */}
+        <div className="text-center mb-10">
+            <h2 className="text-4xl md:text-5xl font-serif text-primary font-bold mb-4">Our Moments</h2>
+            <div className="w-24 h-1 bg-accent mx-auto"></div>
+        </div>
 
-      <div
-        className="absolute top-1/2 left-4 text-3xl text-white cursor-pointer z-10"
-        onClick={() =>
-          setCurrentIndex((currentIndex - 1 + totalSlides) % totalSlides)
-        }
-      >
-        &#8249;
-      </div>
-      <div
-        className="absolute top-1/2 right-4 text-3xl text-white cursor-pointer z-10"
-        onClick={goToNextSlide}
-      >
-        &#8250;
-      </div>
+        {/* Slider Container */}
+        <div className="relative group w-full h-[500px] md:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
+            {/* Image */}
+            <div 
+                style={{ backgroundImage: `url(${slides[currentIndex].imageUrl})` }} 
+                className="w-full h-full bg-center bg-cover bg-no-repeat duration-700 ease-in-out transition-all"
+            >
+                {/* Modern Gradient Overlay for Text Readability */}
+                <div className="absolute bottom-0 w-full bg-gradient-to-t from-black/90 via-black/50 to-transparent p-8 md:p-12">
+                    <p className="text-white text-lg md:text-2xl font-serif tracking-wide border-l-4 border-accent pl-4">
+                        {slides[currentIndex].details}
+                    </p>
+                </div>
+            </div>
 
-      <div className="flex justify-center space-x-2 mt-4">
-        {sliderData.map((_, index) => (
-          <div
-            key={index}
-            className={`w-3 h-3 rounded-full cursor-pointer ${
-              currentIndex === index ? "bg-primary" : "bg-gray-400"
-            }`}
-            onClick={() => setCurrentIndex(index)}
-          />
-        ))}
-      </div>
+            {/* Arrows (Always visible for accessibility, larger touch targets) */}
+            <button 
+                onClick={prevSlide}
+                className="absolute top-1/2 left-5 -translate-y-1/2 p-3 rounded-full bg-white/20 hover:bg-accent backdrop-blur-sm text-white transition-all"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+            </button>
+            <button 
+                onClick={nextSlide}
+                className="absolute top-1/2 right-5 -translate-y-1/2 p-3 rounded-full bg-white/20 hover:bg-accent backdrop-blur-sm text-white transition-all"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            </button>
+        </div>
+
+        {/* Dots Navigation */}
+        <div className="flex justify-center py-6 gap-3">
+            {slides.map((_, slideIndex) => (
+                <div
+                    key={slideIndex}
+                    onClick={() => setCurrentIndex(slideIndex)}
+                    className={`transition-all duration-300 cursor-pointer rounded-full ${
+                        currentIndex === slideIndex ? "bg-primary w-8" : "bg-gray-300 w-3 hover:bg-accent"
+                    } h-3`}
+                ></div>
+            ))}
+        </div>
     </div>
   );
 }

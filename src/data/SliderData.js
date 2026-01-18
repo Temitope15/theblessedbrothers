@@ -3,8 +3,38 @@
  */
 
 export const sliderData = [
-
-  
+  {
+    imageUrl: "https://ibb.co/nsfvW6G4",
+    details: "2025 End of the year general meeting",
+  },
+  {
+    imageUrl: "https://ibb.co/5hWZB6c3",
+    details: "2025 End of the year general meeting",
+  },
+  {
+    imageUrl: "https://ibb.co/wh30hMwx",
+    details: "2025 End of the year general meeting",
+  },
+  {
+    imageUrl: "https://ibb.co/bMgGTw14",
+    details: "2025 End of the year general meeting",
+  },
+  {
+    imageUrl: "https://ibb.co/4nzW6Pbt",
+    details: "2025 End of the year general meeting",
+  },
+  {
+    imageUrl: "https://ibb.co/G4zWcFK3",
+    details: "2025 End of the year general meeting",
+  },
+  {
+    imageUrl: "https://ibb.co/wrNwbMkk",
+    details: "2025 End of the year general meeting",
+  },
+  {
+    imageUrl: "https://ibb.co/rfpdZh7j",
+    details: "2025 End of the year general meeting",
+  },
   {
     imageUrl: "https://i.ibb.co/hFBknRVN/bb-new-1.jpg",
     details: "During our 2025 general meeting",

@@ -2,3 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* This section forces the fonts globally.
+   You don't need to add className="font-sans" to every <p> tag anymore.
+*/
+@layer base {
+  html {
+    font-family: "Inter", sans-serif;
+    @apply text-gray-700; /* Sets a softer default text color for readability */
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Playfair Display", serif;
+    @apply font-bold text-primary; /* Forces all headings to be Navy Blue & Bold */
+  }
+}
