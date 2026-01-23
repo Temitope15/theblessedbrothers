@@ -14,6 +14,33 @@ export const MEMBERS = [
       "Lawrence Akinsunmade is a visionary leader and the president of Blessed Brothers, committed to empowering youth and promoting personal development among members.",
   },
   {
+    memberName: "Victor Abayomi",
+    memberpics: "https://i.ibb.co/HzBzb63/victor-abayomi.jpg",
+    position: "General Secretary",
+    email: "yomvic@yahoo.com",
+    tel: "+13176030578",
+    about:
+      "Victor Abayomi serves as the General Secretary, responsible for managing Blessed Brothers' administrative tasks and maintaining effective communication among members.",
+  },
+  {
+    memberName: "Kehinde Akinseye",
+    memberpics: "https://i.ibb.co/6P901Np/kehinde-akinseye.jpg",
+    position: "Financial Secretary",
+    email: "kehindeakinseye@rocketmail.com",
+    tel: "+13174061877",
+    about:
+      "Kehinde Akinseye oversees financial operations as the Financial Secretary, ensuring transparency and accountability in Blessed Brothers' financial matters.",
+  },
+   {
+    memberName: "Roland Akinyosoye",
+    memberpics: "https://i.ibb.co/W5YRpJd/roland-akinyosoye.jpg",
+    position: "PRO",
+    email: "rowlandindcarea@yahoo.com",
+    tel: "+13014185433",
+    about:
+      "Roland Akinyosoye serves as the Public Relations Officer (PRO), handling communications and representing Blessed Brothers in public forums.",
+  },
+  {
     memberName: "Adeduwon Adeyemi",
     memberpics: "https://i.ibb.co/5c6S5n5/adeduwon-adeyemi.jpg",
     about:
@@ -55,39 +82,15 @@ export const MEMBERS = [
     about:
       "Dada Akinsuroju is a creative thinker and problem solver, working behind the scenes to support the operational aspects of Blessed Brothers.",
   },
-  {
-    memberName: "Kehinde Akinseye",
-    memberpics: "https://i.ibb.co/6P901Np/kehinde-akinseye.jpg",
-    position: "Financial Secretary",
-    email: "kehindeakinseye@rocketmail.com",
-    tel: "+13174061877",
-    about:
-      "Kehinde Akinseye oversees financial operations as the Financial Secretary, ensuring transparency and accountability in Blessed Brothers' financial matters.",
-  },
-  {
-    memberName: "Roland Akinyosoye",
-    memberpics: "https://i.ibb.co/W5YRpJd/roland-akinyosoye.jpg",
-    position: "PRO",
-    email: "rowlandindcarea@yahoo.com",
-    tel: "+13014185433",
-    about:
-      "Roland Akinyosoye serves as the Public Relations Officer (PRO), handling communications and representing Blessed Brothers in public forums.",
-  },
+  
+ 
   {
     memberName: "Sina Aderinwoye",
     memberpics: "https://i.ibb.co/8bRdNcx/sina-aderinwoye.jpg",
     about:
       "Sina Aderinwoye is a passionate advocate for personal development and spiritual growth, always encouraging members to unlock their full potential.",
   },
-  {
-    memberName: "Victor Abayomi",
-    memberpics: "https://i.ibb.co/HzBzb63/victor-abayomi.jpg",
-    position: "General Secretary",
-    email: "yomvic@yahoo.com",
-    tel: "+13176030578",
-    about:
-      "Victor Abayomi serves as the General Secretary, responsible for managing Blessed Brothers' administrative tasks and maintaining effective communication among members.",
-  },
+  
   {
     memberName: "Victor Adenusi",
     memberpics: "https://i.ibb.co/rZSDtrh/victor-adenusi.jpg",

@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
         {/* Branding */}
         <div className="flex justify-center md:justify-start">
-          <h2 className="text-2xl font-bold">The Blessed Brothers</h2>
+          <h2 className="text-2xl font-bold text-white">The Blessed Brothers</h2>
         </div>
 
         {/* Navigation Links */}

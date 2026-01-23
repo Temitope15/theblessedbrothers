@@ -9,9 +9,8 @@ import { slides } from "./data/slidesData";
 import Members from "./Members";
 import Footer from "./components/Footer";
 import ContactForm from "./ContactForm";
-import GroupPhotoSlider from "./components/GroupPhotoSlider"; // Use the new one
-import Admin from "./Admin"; // Import the admin page
-
+import Admin from "./Admin"; // admin page
+import CoreValues from "./components/CoreValues";
 // Create a Layout component for the public pages
 const PublicLayout = () => (
   <div className="bg-surface">
@@ -21,7 +20,7 @@ const PublicLayout = () => (
     <Services />
     <Team />
     <Members />
-    <GroupPhotoSlider />
+    <CoreValues />
     <ContactForm />
     <Footer />
   </div>
@@ -34,7 +33,7 @@ function App() {
         {/* The Main Website */}
         <Route path="/" element={<PublicLayout />} />
         
-        {/* The Secret Route - Give this URL to yourself only */}
+        {/* The Secret Route */}
         <Route path="/admin-secret-upload" element={<Admin />} />
       </Routes>
     </Router>
